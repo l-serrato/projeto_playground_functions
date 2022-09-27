@@ -1,24 +1,28 @@
 // Desafio 11
 function generatePhoneNumber(sequence) {
-  if (sequence.length !== 11){
-    return 'Array com tamanho incorreto.'
+  let repeat = 0;
+  let viewed = 0;
+  let checked = 0;
+  let limit = 3;
+  for (let i = 0; i < sequence.length; i += 1){
+    viewed = sequence[i];
+    repeat = 0;
+    if (repeat < limit) {
+      for (index = 0; index < sequence.length; index += 1){
+        checked = sequence[index];
+        if (viewed === checked) {repeat += 1;}
+      }
+    } if (repeat >= limit) {return 'não é possível gerar um número de telefone com esses valores';}
   }
-  for (let num of sequence){
-    if (num < 0 || num > 9){
-      return 'não é possível gerar um número de telefone com esses valores';
-    }
-  }
-  let sequenceSorted = sequence.slice(0);
-  sequenceSorted.sort(function (a, b) { return a - b});
-  for (let i = 0; i <=8; i += 1){
-    if(sequenceSorted[i] === sequenceSorted[i + 2]){
-      message = 'não é possível gerar um número de telefone com esses valores';
-    }
-    }
-  return message;
+  if (sequence.length !== 11){return 'Array com tamanho incorreto.'}
+  for (i = 0; i < sequence.length; i += 1){
+    if (sequence[i] < 0 || sequence[i] > 9){return 'não é possível gerar um número de telefone com esses valores'}}
 
-  let number = ' ';
-}
+    let counter = 0;
+    let phone;
+    phone = ( '(' + sequence[0] + sequence[1] + ')' + ' ' + sequence[2] + sequence[3] + sequence[4] + sequence[5] + sequence[6] + '-' + sequence[7] + sequence[8] + sequence[9] + sequence[10]);
+    return phone;
+  }
 
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
