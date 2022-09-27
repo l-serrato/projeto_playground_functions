@@ -12,8 +12,9 @@ function calcArea(base, height) {
 }
 
 // Desafio 3
-function splitSentence() {
-  // seu código aqui
+function splitSentence(phrase) {
+  let array = phrase.split(' ');
+  return array;
 }
 
 // Desafio 4
@@ -33,8 +34,13 @@ function highestCount() {
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  if (cat1 < cat2) {
+    return 'cat1';
+  } else if (cat2 < cat1) {
+    return 'cat2';
+  }return 'os gatos trombam e o rato foge'
+  
 }
 
 // Desafio 8
